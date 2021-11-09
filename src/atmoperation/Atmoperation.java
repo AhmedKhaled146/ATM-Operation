@@ -5,8 +5,8 @@ public class Atmoperation
 {
     public static void main(String args[] )
     { 
-        int balance = 5000, withdraw, deposit;
-        Scanner s = new Scanner(System.in);
+        int balance = 50000, withdraw, deposit;
+        Scanner choise = new Scanner(System.in);
         while(true)
         {
             System.out.println("Automated Teller Machine");
@@ -14,15 +14,13 @@ public class Atmoperation
             System.out.println("Choose 2 for Deposit");
             System.out.println("Choose 3 for Check Balance");
             System.out.println("Choose 4 for EXIT");
-            System.out.print("Choose the operation you want to perform:");
-            System.out.println("");
-            System.out.println("");
-            int n = s.nextInt();
-            switch(n)
+            System.out.print("Choose the operation you want to perform: ");
+            int NO = choise.nextInt();
+            switch(NO)
             {
                 case 1:
                 System.out.print("Enter money to be withdrawn:");
-                withdraw = s.nextInt();
+                withdraw = choise.nextInt();
                 if(balance >= withdraw)
                 {
                     balance = balance - withdraw;
@@ -37,13 +35,14 @@ public class Atmoperation
  
                 case 2:
                 System.out.print("Enter money to be deposited:");
-                deposit = s.nextInt();
+                deposit = choise.nextInt();
                 balance = balance + deposit;
                 System.out.println("Your Money has been successfully depsited");
                 System.out.println("");
                 break;
  
                 case 3:
+                System.out.println("");
                 System.out.println("Balance : "+balance);
                 System.out.println("");
                 System.out.println("");
